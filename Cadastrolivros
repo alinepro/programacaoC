@@ -38,13 +38,13 @@ switch (opcao) {
     printf("--- Cadastro de Novo Livro ---\n\n");
           
         if (totalLivros < MAX_LIVROS) {
-            printf("Digite o nome do livro: ");
+            printf("Digite o nome do livro: \n");
             fgets(biblioteca[totalLivros].nome, TAM_STRING, stdin);
 
-            printf("Digite o autor: ");
+            printf("Digite o autor: \n");
             fgets(biblioteca[totalLivros].autor, TAM_STRING, stdin);
 
-            printf("Digite a editora: ");
+            printf("Digite a editora: \n");
             fgets(biblioteca[totalLivros].editora, TAM_STRING, stdin);
 
           biblioteca[totalLivros].nome[strcspn(biblioteca[totalLivros].nome,  "\n")] =
