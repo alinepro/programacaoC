@@ -1,0 +1,14 @@
+include <stdio.h>
+
+void dobrar(int x) { //A função dobrar(int x) recebe um número e dobra seu valor, mas a modificação acontece apenas dentro da função.
+    x = x * 2; //Dentro da função, x recebe uma cópia do valor de numero. Quando x é dobrado, a alteração não afeta a variável original numero.
+    printf("Dentro da função: %d", x);
+}
+
+int main() {  // No main(), a variável numero é inicializada com o valor 5 e passada para a função dobrar(numero).
+    int numero = 5;
+    dobrar(numero);
+    printf("Fora da função: %d", numero );
+    return 0;
+}
+//Ao imprimir dentro da função, vemos o valor dobrado (10), mas fora da função, numero continua com o valor original (5).
