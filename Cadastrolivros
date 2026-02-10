@@ -19,6 +19,9 @@ struct Emprestimo{
   char nomeUsuario[TAM_STRING];
 };
 
+//protótipo das funções
+// declarar funções aqui permite que a main as chame antes de suas definições
+
 void limparBufferEntrada (){
   int c;
   while ((c = getchar()) != '\n' && c != EOF);
