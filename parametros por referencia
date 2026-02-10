@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void dobrar(int* x) { //int* x declara que a função dobrar recebe um ponteiro para inteiro.
+    *x = (*x) * 2; //*x acessa o conteúdo no endereço e o modifica.
+}
+
+int main() {
+    int numero = 5;
+    dobrar(&numero); //&numero passa o endereço da variável numero.
+    printf("Número dobrado: %d", numero);
+    return 0;
+} 
