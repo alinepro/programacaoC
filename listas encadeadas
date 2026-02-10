@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h> //Biblioteca para funções de string (strcpy, strcmp)
+
+//define uma constante para o comprimenta maximo que cada texto deve ter
+#define MAX_STR_LEN 50    //tamanho máximo de cada texto(string)
+
+// PARTE 1: lista estática (vetor de string)
+//* estrutura de dados de tamanho fixo
+//* implementada com vetor ou array
+//* toda memoria necessaria é implementada de uma so vez quando a variavel e declarada
+
+//define uma constante paara o numero maximo de itens que uma lista deve ter
+#define TAM_MAX 10  //numero máximo de itens na lista estatica
+
+// estrutura que represeenta a lista estática
+typedef struct{
+      char dados [TAM_MAX][MAX_STR_LEN]; //matriz: 10 linhas e 50 colunas
+      int quantidade; //contador de controle. informa quantos itens estão realmente armazenados na lista
+} listaEstatica;
+
+//funções da lista estatica
+
+//esta função prepara a lista para seer usada
+//define o contador como 0, indicando q a lista esta vazia
+//recebemos um ponteiro(*lista) para modificar a vaqriavel original passada para a função
+
+void inicializarListaEstatica(ListaEstatica *lista);
+
+void inserirListaEstatica(ListaEstatica *lista, const char* texto);
+void removerListaEstatica(ListaEstatica *lista, const char* texto);
+void listarListaEstatica(const ListaEstatica *lista);
+
+//PARTE 2: lista encadeada de strings
+//é uma estrutura encadiada de tamanho dinamico
+//composta por nós separados na memoria
+//onde cada no contem um dado e um ponteiro que aponta para o proximo no da sequencia
+
+//estrutura do no (cada elemento da lista)
+//- char* dado: este é um ponteiro. ele não armazena dado em sim, mas sim um endereço
+//da memoria aonde o dado está guardado
+//isso é muito flexivel pois cada texto pode ter um tamanho diferente e alocamos a memoria necessaria para cada um
+//- struct No* proximo:cria a ligação. Armazena o endereço do proximo nó na lista
+// o ultimo nó da lista tera esse ponteiro apontando para NULL
+
+typedef struct No {
+    char* dado;
+    struct No *proximo;
+} No;
+
+//isto é um atalho ao inves de escrever No* sempre que quisermos nos referir à nossa lista, podemos simplesment4e usar
+//a "lista" em sim é apenas um ponteiro para o primeiro no
+typedef No* ListasEncadedas;
+
+//Funções da lista encadeada
+// uma lista encadeada vazia é representaa por um ponteiro de cabeça que aponta para o null
+// essa função atribui NULL ao ponteiro que representa nossa lista.
+
+void inicializarListaEncadeada(ListaEncadeada *lista)
+void inserirListaEncadeada(ListaEncadeada *lista, const char* texto);
+void removerListaEncadeada(ListaEncadeada *lista, const char* texto);
+void listarListaEncadeada(const ListaEncadeada *lista);
+
