@@ -57,7 +57,10 @@ typedef No* ListasEncadedas;
 // essa função atribui NULL ao ponteiro que representa nossa lista.
 
 void inicializarListaEncadeada(ListaEncadeada *lista)
+
 void inserirListaEncadeada(ListaEncadeada *lista, const char* texto);
 void removerListaEncadeada(ListaEncadeada *lista, const char* texto);
 void listarListaEncadeada(const ListaEncadeada *lista);
+void liberarListaEncadeada(ListaEncadeada *lista); //função nova para limpar memoria
+
 
